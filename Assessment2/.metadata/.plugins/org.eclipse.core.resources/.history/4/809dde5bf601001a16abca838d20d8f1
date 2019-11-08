@@ -1,0 +1,2 @@
+loc.search.xpath=//input[@name='search']
+loc.click.addtocart.xpath=(//span[@class='hidden-xs hidden-sm hidden-md'])[7]

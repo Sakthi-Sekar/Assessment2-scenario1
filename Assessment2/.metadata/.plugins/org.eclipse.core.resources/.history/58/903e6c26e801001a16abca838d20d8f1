@@ -1,0 +1,23 @@
+package com.atmecs.ninja.testbase;
+
+import java.io.IOException;
+
+import java.util.Properties;
+
+import com.atmecs.ninja.constants.ConstantPaths;
+import com.atmecs.ninja.helpers.ReadPropertiesFile;
+
+public class InvokeBrowser {
+
+	public WebDriver driver;
+	Properties config = new Properties();
+	protected ReadPropertiesFile read = new ReadPropertiesFile();
+
+
+	public void setup() throws IOException {
+		System.setProperty("webdriver.ie.driver", ConstantPaths.IE_FILE);
+		driver = new ChromeDriver();
+		driver.get(read.readPropertiesFile("url", ConstantPaths.CONFIG_FILE));
+		driver.manage().window().maximize();
+	}
+}

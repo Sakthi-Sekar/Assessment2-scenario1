@@ -1,0 +1,3 @@
+loc.search.xpath=//input[@name='search']
+loc.button.search.xpath=(//button[@type='button'])[4]
+loc.click.addtocart.xpath=(//button[@type='button'])[9]

@@ -1,0 +1,11 @@
+package com.atmecs.ninja.testscripts;
+
+import com.atmecs.ninja.helpers.ReadPropertiesFile;
+
+public class AddToCart {
+	ReadPropertiesFile read = new ReadPropertiesFile();
+
+	public void addProducts() {
+read.readPropertiesFile("loc.search.css", path)
+	}
+}

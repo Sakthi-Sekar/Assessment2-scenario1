@@ -1,0 +1,18 @@
+package com.atmecs.ninja.testscripts;
+
+import org.testng.annotations.Test;
+
+import com.atmecs.ninja.constants.ConstantPaths;
+import com.atmecs.ninja.helpers.ReadPropertiesFile;
+
+public class AddToCart {
+	ReadPropertiesFile read = new ReadPropertiesFile();
+
+	String locator;
+
+	@Test(priority = 2)
+	public void addProductsToCart() {
+		locator = read.readPropertiesFile("loc.search.css", ConstantPaths.IE_FILE);
+
+	}
+}

@@ -1,0 +1,22 @@
+package com.atmecs.ninja.testscripts;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import com.atmecs.ninja.constants.ConstantPaths;
+import com.atmecs.ninja.helpers.PageActions;
+import com.atmecs.ninja.helpers.ReadPropertiesFile;
+import com.atmecs.ninja.testbase.InvokeBrowser;
+
+public class AddToCart extends InvokeBrowser {
+	ReadPropertiesFile read = new ReadPropertiesFile();
+	PageActions page = new PageActions();
+	String locator;
+
+	@Test(priority = 2)
+	public void addProductsToCart() {
+		locator = read.readPropertiesFile("loc.search.css", ConstantPaths.LOCATORS_FILE);
+		// driver.findElement(By.cssSelector(locator)).click();
+		PageActions.clickOnElement(driver, locator);
+	}
+}

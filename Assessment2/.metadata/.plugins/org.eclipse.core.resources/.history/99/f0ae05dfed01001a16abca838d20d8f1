@@ -1,0 +1,21 @@
+package com.atmecs.ninja.testscripts;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import com.atmecs.ninja.constants.ConstantPaths;
+import com.atmecs.ninja.helpers.ReadPropertiesFile;
+
+public class AddToCart {
+	ReadPropertiesFile read = new ReadPropertiesFile();
+	WebDriver driver;
+	String locator;
+
+	@Test
+	public void addProductsToCart() {
+		locator = read.readPropertiesFile("loc.search.css", ConstantPaths.IE_FILE);
+		driver.findElement(By.cssSelector(locator)).click();
+
+	}
+}

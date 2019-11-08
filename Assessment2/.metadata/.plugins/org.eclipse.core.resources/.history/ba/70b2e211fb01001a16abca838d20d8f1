@@ -1,0 +1,36 @@
+package com.atmecs.ninja.testscripts;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import com.atmecs.ninja.constants.ConstantPaths;
+import com.atmecs.ninja.helpers.PageActions;
+import com.atmecs.ninja.helpers.ReadExcelData;
+import com.atmecs.ninja.helpers.ReadPropertiesFile;
+import com.atmecs.ninja.testbase.InvokeBrowser;
+import org.openqa.selenium.Keys;
+
+public class AddToCart extends InvokeBrowser {
+	ReadPropertiesFile read = new ReadPropertiesFile();
+
+	String Xpath;
+
+	@Test(priority = 2)
+	public void addProduct() {
+		Xpath = read.readPropertiesFile("loc.search.xpath", ConstantPaths.LOCATORS_FILE);
+		PageActions.clickOnElement(driver, Xpath);
+		driver.findElement(By.xpath("//input[@name='search']")).sendKeys("iPhone");
+		driver.findElement(By.xpath("//input[@name='search']")).sendKeys(Keys.ENTER);
+
+		Xpath = read.readPropertiesFile("loc.click.addtocart.xpath", ConstantPaths.LOCATORS_FILE);
+		PageActions.clickOnElement(driver, Xpath);
+
+	}
+
+//	@Test(priority = 3, dataProvider = "data", dataProviderClass = ReadExcelData.class)
+//	public void enterData(String[] in) {
+//		Xpath = read.readPropertiesFile("loc.search.xpath", ConstantPaths.DATA_FILE);
+//		driver.findElement(By.xpath(Xpath)).sendKeys(in[0]);
+//	}
+
+}

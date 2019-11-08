@@ -1,0 +1,2 @@
+loc.search.xpath=//input[@name='search']
+loc.click.addtocart.xpath=//span[text()='Add to Cart']

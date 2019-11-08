@@ -1,0 +1,21 @@
+package com.atmecs.ninja.testscripts;
+
+import org.openqa.selenium.By;
+import com.atmecs.ninja.constants.ConstantPaths;
+import com.atmecs.ninja.helpers.PageActions;
+import com.atmecs.ninja.helpers.ReadPropertiesFile;
+import com.atmecs.ninja.testbase.InvokeBrowser;
+
+public class AddToCart extends InvokeBrowser {
+	ReadPropertiesFile read = new ReadPropertiesFile();
+
+	String Xpath;
+
+	public void addProducts() {
+		Xpath = read.readPropertiesFile("loc.search.xpath", ConstantPaths.LOCATORS_FILE);
+		driver.findElement(By.cssSelector(Xpath)).click();
+
+		PageActions.clickOnElement(driver, Xpath);
+
+	}
+}

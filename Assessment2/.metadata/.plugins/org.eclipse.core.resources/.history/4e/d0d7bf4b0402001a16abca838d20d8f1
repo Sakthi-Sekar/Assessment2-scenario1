@@ -1,0 +1,5 @@
+loc.search.xpath=//input[@name='search']
+loc.button.search.xpath=(//button[@type='button'])[4]
+loc.click.addtocart.xpath=(//button[@type='button'])[9]
+loc.validate.title.xpath=//a[text()='The Ninja Store']
+exptext=The Ninja store
